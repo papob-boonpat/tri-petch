@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import classes from "./App.module.scss";
+import footballer from "./Assets/FootBaller_mobile.png";
+import players from "./Assets/Players_mobile.png";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.App}>
+      <div className={classes.Athlete}>
+        <h1>ATHLETS</h1>
+        <div className={classes.FootBallerContainer}>
+          <img src={footballer} alt="footballer_image" />
+        </div>
+        <div className={classes.Feature}></div>
+      </div>
+      <div className={classes.Players}>
+        <h1>PLAYERS</h1>
+        <div className={classes.PlayersContainer}>
+          <img src={players} alt="players_image" />
+        </div>
+        <div className={classes.Feature}></div>
+      </div>
     </div>
   );
 }
