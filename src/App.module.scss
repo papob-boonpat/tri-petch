@@ -27,9 +27,25 @@
     }
   }
 
-  .Feature {
+  .Features {
     height: 284px;
     background-color: #f5f4f9;
+    :global(.rs-carousel) {
+      height: 284px;
+    }
+
+    :global(.rs-carousel-toolbar) {
+      bottom: 28px;
+    }
+    .Feature {
+      margin-top: 72px;
+      height: 200px;
+
+      div:nth-child(1) {
+        display: flex;
+        align-items: center;
+      }
+    }
   }
 
   .Players {
