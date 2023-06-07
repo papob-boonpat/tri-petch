@@ -11,6 +11,7 @@ body {
   --rs-carousel-bg: transparent;
   --rs-carousel-indicator: #d8d8d8;
   --rs-carousel-indicator-active: #5c3caf;
+  --rs-text-primary: #000;
 }
 
 code {

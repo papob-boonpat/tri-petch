@@ -1,5 +1,7 @@
 .App {
-  // background-color: aqua;
+  .Background {
+    display: none;
+  }
 
   h1 {
     color: #e7e7e7;
@@ -19,15 +21,23 @@
       width: 100%;
       display: flex;
       justify-content: center;
+      position: relative;
 
-      img {
+      .Footballer {
         height: 281px;
+        width: 218px;
         margin-top: 11px;
+        background-image: url("./Assets/FootBaller_mobile.png");
+        background-repeat: no-repeat;
       }
     }
   }
 
   .Features {
+    display: none;
+  }
+
+  .FeaturesMobile {
     height: 284px;
     background-color: #f5f4f9;
     :global(.rs-carousel) {
@@ -37,13 +47,50 @@
     :global(.rs-carousel-toolbar) {
       bottom: 28px;
     }
+
     .Feature {
       margin-top: 72px;
       height: 200px;
+      padding-left: 19px;
+      padding-right: 2px;
 
       div:nth-child(1) {
         display: flex;
         align-items: center;
+      }
+
+      .Bullet {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        div:nth-child(1) {
+          font-size: 14px;
+          line-height: 16px;
+        }
+
+        div:nth-last-child(1) {
+          margin-top: 2px;
+          height: 4px;
+          width: 17px;
+          border-radius: 999999px;
+          background-color: #603ebe;
+        }
+      }
+
+      .Title {
+        color: #c2c2c2;
+        font-size: 28px;
+        line-height: 32.81px;
+        margin-left: 9px;
+      }
+
+      .Detail {
+        font-size: 15px;
+        line-height: 18px;
+        margin-top: 24px;
+        letter-spacing: 0.4px;
       }
     }
   }
@@ -60,17 +107,96 @@
       display: flex;
       justify-content: center;
 
-      img {
-        height: 249px;
+      .Player {
+        height: 250px;
+        width: 320px;
+        background-image: url("./Assets/Players_mobile.png");
+        background-repeat: no-repeat;
         margin-top: 23px;
       }
     }
   }
 }
 
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 481px) {
   .App {
-    // background-color: lightgreen;
+    h1 {
+      font-size: 90px;
+      line-height: 105px;
+    }
+    .FeaturesMobile {
+      display: none;
+    }
+
+    .Background {
+      position: absolute;
+      display: block;
+      width: 100%;
+      top: 0;
+      z-index: -1;
+
+      & > div:nth-child(1) {
+        height: 377px;
+      }
+      & > div:nth-child(2) {
+        height: 235px;
+        background-color: #f5f4f9;
+      }
+      & > div:nth-child(3) {
+        height: 207px;
+        background-color: #5e3db3;
+      }
+      & > div:nth-child(4) {
+        height: 347px;
+        background-color: #fff;
+      }
+      & > div:nth-child(5) {
+        height: 235px;
+        background-color: #f5f4f9;
+      }
+      & > div:nth-child(6) {
+        height: 207px;
+        background-color: #090c35;
+      }
+    }
+
+    .Features {
+      display: block;
+    }
+
+    .Athlete {
+      display: flex;
+
+      & > h1:nth-child(1) {
+        display: none;
+      }
+
+      .Features {
+        h1 {
+          margin-left: 0;
+          margin-top: 81px;
+        }
+      }
+
+      .FootBallerContainer {
+        max-width: 38%;
+        height: 819px;
+        overflow: hidden;
+        position: relative;
+
+        .Footballer {
+          position: absolute;
+          top: 0;
+          right: 0;
+          margin-top: 102px;
+          background-image: url("./Assets/FootBaller.png");
+          background-size: cover;
+          background-position: top 0 right -50px;
+          height: calc(100% - 102px);
+          width: 100%;
+        }
+      }
+    }
   }
 }
 

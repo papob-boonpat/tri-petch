@@ -1,40 +1,101 @@
 import { Carousel } from "rsuite";
 import classes from "./App.module.scss";
-import footballer from "./Assets/FootBaller_mobile.png";
-import players from "./Assets/Players_mobile.png";
 
 function App() {
+  const data = {
+    athletes: [
+      {
+        title: "CONNECTION",
+        detail:
+          "Connect with coaches directly, you can ping coaches to view profile.",
+      },
+      {
+        title: "COLLABORATION",
+        detail:
+          "Work with other student athletes to increase visability. When you share and like other players videos it will increase your visability as a player. This is the team work aspect to Surface 1.",
+      },
+      {
+        title: "GROWTH",
+        detail:
+          "Resources and tools for you to get better as a student Athelte. Access to training classes, tutor sessions, etc ",
+      },
+    ],
+    players: [
+      {
+        title: "CONNECTION",
+        detail:
+          "Connect with talented athlete directly, you can watch their skills through video showreels directly from Surface 1.",
+      },
+      {
+        title: "COLLABORATION",
+        detail:
+          "Work with recruiter to increase your chances of finding talented athlete.",
+      },
+      {
+        title: "GROWTH",
+        detail: "Save your time, recruit proper athlets for your team.",
+      },
+    ],
+  };
   return (
     <div className={classes.App}>
+      <div className={classes.Background}>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
       <div className={classes.Athlete}>
         <h1>ATHLETS</h1>
         <div className={classes.FootBallerContainer}>
-          <img src={footballer} alt="footballer_image" />
+          <div className={classes.Footballer}></div>
         </div>
         <div className={classes.Features}>
-          <Carousel autoplay autoplayInterval={2000}>
-            <div className={classes.Feature}>
-              <div>
-                <div>01</div>
-                <div>CONNECTION</div>
+          <h1>ATHLETS</h1>
+          {data.athletes.map((feature, i) => (
+            <div key={feature.title}>{feature.title}</div>
+          ))}
+        </div>
+        <div className={classes.FeaturesMobile}>
+          <Carousel>
+            {data.athletes.map((feature, i) => (
+              <div key={feature.title} className={classes.Feature}>
+                <div>
+                  <div className={classes.Bullet}>
+                    <div>{`0${++i}`}</div>
+                    <div></div>
+                  </div>
+                  <div className={classes.Title}>{feature.title}</div>
+                </div>
+                <div className={classes.Detail}>{feature.detail}</div>
               </div>
-              <div>
-                Connect with coaches directly, you can ping coaches to view
-                profile.
-              </div>
-            </div>
-            <div className={classes.Feature}>b</div>
-            <div className={classes.Feature}>c</div>
-            <div className={classes.Feature}>d</div>
+            ))}
           </Carousel>
         </div>
       </div>
       <div className={classes.Players}>
         <h1>PLAYERS</h1>
         <div className={classes.PlayersContainer}>
-          <img src={players} alt="players_image" />
+          <div className={classes.Player}></div>
         </div>
-        <div className={classes.Features}></div>
+        <div className={classes.FeaturesMobile}>
+          <Carousel>
+            {data.players.map((feature, i) => (
+              <div key={feature.title} className={classes.Feature}>
+                <div>
+                  <div className={classes.Bullet}>
+                    <div>{`0${++i}`}</div>
+                    <div></div>
+                  </div>
+                  <div className={classes.Title}>{feature.title}</div>
+                </div>
+                <div className={classes.Detail}>{feature.detail}</div>
+              </div>
+            ))}
+          </Carousel>
+        </div>
       </div>
     </div>
   );
