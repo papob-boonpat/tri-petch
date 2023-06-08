@@ -37,6 +37,24 @@ function App() {
       },
     ],
   };
+
+  const featureComponent = (
+    feature: { title: string; detail: string },
+    i: number
+  ) => {
+    return (
+      <div key={feature.title} className={classes.Feature}>
+        <div>
+          <div className={classes.Bullet}>
+            <div>{`0${++i}`}</div>
+            <div></div>
+          </div>
+          <div className={classes.Title}>{feature.title}</div>
+        </div>
+        <div className={classes.Detail}>{feature.detail}</div>
+      </div>
+    );
+  };
   return (
     <div className={classes.App}>
       <div className={classes.Background}>
@@ -55,33 +73,11 @@ function App() {
           </div>
           <div className={classes.Features}>
             <h1>ATHLETS</h1>
-            {data.athletes.map((feature, i) => (
-              <div key={feature.title} className={classes.Feature}>
-                <div>
-                  <div className={classes.Bullet}>
-                    <div>{`0${++i}`}</div>
-                    <div></div>
-                  </div>
-                  <div className={classes.Title}>{feature.title}</div>
-                </div>
-                <div className={classes.Detail}>{feature.detail}</div>
-              </div>
-            ))}
+            {data.athletes.map((feature, i) => featureComponent(feature, i))}
           </div>
           <div className={classes.FeaturesMobile}>
             <Carousel>
-              {data.athletes.map((feature, i) => (
-                <div key={feature.title} className={classes.Feature}>
-                  <div>
-                    <div className={classes.Bullet}>
-                      <div>{`0${++i}`}</div>
-                      <div></div>
-                    </div>
-                    <div className={classes.Title}>{feature.title}</div>
-                  </div>
-                  <div className={classes.Detail}>{feature.detail}</div>
-                </div>
-              ))}
+              {data.athletes.map((feature, i) => featureComponent(feature, i))}
             </Carousel>
           </div>
         </div>
@@ -92,33 +88,11 @@ function App() {
           </div>
           <div className={classes.Features}>
             <h1>PLAYERS</h1>
-            {data.players.map((feature, i) => (
-              <div key={feature.title} className={classes.Feature}>
-                <div>
-                  <div className={classes.Bullet}>
-                    <div>{`0${++i}`}</div>
-                    <div></div>
-                  </div>
-                  <div className={classes.Title}>{feature.title}</div>
-                </div>
-                <div className={classes.Detail}>{feature.detail}</div>
-              </div>
-            ))}
+            {data.players.map((feature, i) => featureComponent(feature, i))}
           </div>
           <div className={classes.FeaturesMobile}>
             <Carousel>
-              {data.players.map((feature, i) => (
-                <div key={feature.title} className={classes.Feature}>
-                  <div>
-                    <div className={classes.Bullet}>
-                      <div>{`0${++i}`}</div>
-                      <div></div>
-                    </div>
-                    <div className={classes.Title}>{feature.title}</div>
-                  </div>
-                  <div className={classes.Detail}>{feature.detail}</div>
-                </div>
-              ))}
+              {data.players.map((feature, i) => featureComponent(feature, i))}
             </Carousel>
           </div>
         </div>
