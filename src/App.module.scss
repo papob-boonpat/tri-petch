@@ -128,6 +128,7 @@
       font-size: 90px;
       line-height: 105px;
     }
+
     .FeaturesMobile {
       display: none;
     }
@@ -166,6 +167,50 @@
 
     .Features {
       display: block;
+
+      .Feature {
+        padding-top: 30px;
+        div:nth-child(1) {
+          display: flex;
+          align-items: center;
+        }
+
+        .Bullet {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          div:nth-child(1) {
+            font-size: 18px;
+            line-height: 21px;
+          }
+
+          div:nth-last-child(1) {
+            margin-top: 5px;
+            height: 5px;
+            width: 22px;
+            border-radius: 999999px;
+            background-color: #603ebe;
+          }
+        }
+
+        .Title {
+          color: #c2c2c2;
+          font-size: 36px;
+          line-height: 42px;
+          margin-left: 12px;
+          letter-spacing: 1.5px;
+        }
+
+        .Detail {
+          font-size: 18px;
+          line-height: 28px;
+          margin-top: 21px;
+          letter-spacing: 0.4px;
+          padding-right: 20px;
+        }
+      }
     }
 
     .Athlete {
@@ -179,6 +224,26 @@
         h1 {
           margin-left: 0;
           margin-top: 81px;
+          margin-bottom: 12px;
+        }
+
+        .Feature:nth-of-type(1) {
+          height: 179px;
+        }
+        .Feature:nth-of-type(2) {
+          height: 235px;
+        }
+        .Feature:nth-of-type(3) {
+          height: 207px;
+          .Bullet {
+            div:nth-last-child(1) {
+              background-color: #fff;
+            }
+          }
+
+          .Detail {
+            color: #fff;
+          }
         }
       }
 
@@ -201,11 +266,118 @@
         }
       }
     }
+
+    .Players {
+      display: flex;
+      flex-direction: row-reverse;
+      margin-top: 0;
+
+      & > h1:nth-child(1) {
+        display: none;
+      }
+
+      .Features {
+        padding-left: 31px;
+        h1 {
+          margin-left: 0;
+          margin-top: 51px;
+          margin-bottom: 0px;
+        }
+        .Feature {
+          padding-top: 0;
+        }
+
+        .Feature:nth-of-type(1) {
+          height: 157px;
+          margin-top: 34px;
+        }
+        .Feature:nth-of-type(2) {
+          height: 184px;
+          margin-top: 51px;
+        }
+        .Feature:nth-of-type(3) {
+          height: 163px;
+          margin-top: 44px;
+          .Bullet {
+            div:nth-child(1) {
+              color: #8765dd;
+            }
+            div:nth-last-child(1) {
+              background-color: #fff;
+            }
+          }
+
+          .Detail {
+            color: #fff;
+          }
+        }
+      }
+
+      .PlayersContainer {
+        max-width: 34%;
+        height: 789px;
+        overflow: visible;
+        position: relative;
+
+        .Player {
+          position: absolute;
+          top: 0;
+          left: -120px;
+          background-image: url("./Assets/Player.png");
+          background-size: cover;
+          background-position: top -5px left 0;
+          height: 570px;
+          width: calc(100% + 120px);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .App .Players .PlayersContainer .Player {
+    position: absolute;
+    top: 0;
+    left: -170px;
+    background-image: url("./Assets/Player.png");
+    background-size: cover;
+    background-position: top -5px left 0;
+    height: 570px;
+    width: calc(100% + 170px);
   }
 }
 
 @media screen and (min-width: 768px) {
   .App {
-    // background-color: lavender;
+    .Content {
+      max-width: 1620px;
+      margin: auto;
+    }
+
+    .Background {
+      & > div:nth-child(1) {
+        height: 345px;
+      }
+      & > div:nth-child(2) {
+        height: 256px;
+        background-color: #f5f4f9;
+      }
+      & > div:nth-child(3) {
+        height: 297px;
+        background-color: #5e3db3;
+      }
+      & > div:nth-child(4) {
+        height: 485px;
+        background-color: #fff;
+      }
+      & > div:nth-child(5) {
+        height: 235px;
+        background-color: #f5f4f9;
+      }
+      & > div:nth-child(6) {
+        height: 207px;
+        background-color: #090c35;
+      }
+    }
   }
 }

@@ -47,19 +47,14 @@ function App() {
         <div></div>
         <div></div>
       </div>
-      <div className={classes.Athlete}>
-        <h1>ATHLETS</h1>
-        <div className={classes.FootBallerContainer}>
-          <div className={classes.Footballer}></div>
-        </div>
-        <div className={classes.Features}>
+      <div className={classes.Content}>
+        <div className={classes.Athlete}>
           <h1>ATHLETS</h1>
-          {data.athletes.map((feature, i) => (
-            <div key={feature.title}>{feature.title}</div>
-          ))}
-        </div>
-        <div className={classes.FeaturesMobile}>
-          <Carousel>
+          <div className={classes.FootBallerContainer}>
+            <div className={classes.Footballer}></div>
+          </div>
+          <div className={classes.Features}>
+            <h1>ATHLETS</h1>
             {data.athletes.map((feature, i) => (
               <div key={feature.title} className={classes.Feature}>
                 <div>
@@ -72,16 +67,31 @@ function App() {
                 <div className={classes.Detail}>{feature.detail}</div>
               </div>
             ))}
-          </Carousel>
+          </div>
+          <div className={classes.FeaturesMobile}>
+            <Carousel>
+              {data.athletes.map((feature, i) => (
+                <div key={feature.title} className={classes.Feature}>
+                  <div>
+                    <div className={classes.Bullet}>
+                      <div>{`0${++i}`}</div>
+                      <div></div>
+                    </div>
+                    <div className={classes.Title}>{feature.title}</div>
+                  </div>
+                  <div className={classes.Detail}>{feature.detail}</div>
+                </div>
+              ))}
+            </Carousel>
+          </div>
         </div>
-      </div>
-      <div className={classes.Players}>
-        <h1>PLAYERS</h1>
-        <div className={classes.PlayersContainer}>
-          <div className={classes.Player}></div>
-        </div>
-        <div className={classes.FeaturesMobile}>
-          <Carousel>
+        <div className={classes.Players}>
+          <h1>PLAYERS</h1>
+          <div className={classes.PlayersContainer}>
+            <div className={classes.Player}></div>
+          </div>
+          <div className={classes.Features}>
+            <h1>PLAYERS</h1>
             {data.players.map((feature, i) => (
               <div key={feature.title} className={classes.Feature}>
                 <div>
@@ -94,7 +104,23 @@ function App() {
                 <div className={classes.Detail}>{feature.detail}</div>
               </div>
             ))}
-          </Carousel>
+          </div>
+          <div className={classes.FeaturesMobile}>
+            <Carousel>
+              {data.players.map((feature, i) => (
+                <div key={feature.title} className={classes.Feature}>
+                  <div>
+                    <div className={classes.Bullet}>
+                      <div>{`0${++i}`}</div>
+                      <div></div>
+                    </div>
+                    <div className={classes.Title}>{feature.title}</div>
+                  </div>
+                  <div className={classes.Detail}>{feature.detail}</div>
+                </div>
+              ))}
+            </Carousel>
+          </div>
         </div>
       </div>
     </div>
